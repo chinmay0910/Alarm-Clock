@@ -1,0 +1,135 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 3px;
+    /* background-color: black; */
+}
+
+.box {
+    height: 20vw;
+    background-color: aqua;
+    border-radius: 6px;
+    font-size: 15vw;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.date {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    background-color: aqua;
+    height: 40px; 
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 1.5em;
+    overflow:auto;
+}
+
+.alarm {
+    display: grid;
+    grid-template-rows: 1fr 0.25fr;
+    background-color: darkgray;
+    width: 50%;
+    border: 5px darkgray solid;
+    border-radius: 10px;
+}
+
+.time {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#hour,#minute {
+    width: 85%;
+    background-color: rgb(239, 239, 239);
+    border: 1px rgb(67, 66, 66) solid;
+    border-radius: 10px;
+    justify-self: center;
+}
+
+#setAlarm {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid black;
+    justify-self: center;
+    position: relative;
+    left: 45%;
+}
+
+#setAlarm:hover{
+    background-color: gray;
+    transition: 0.35s ease-in;
+}
+
+.alarm input{
+    text-align: center;
+    font-size: 100%;
+    width: 90%;
+    margin: 0px;
+    border-radius: 10px;
+    border: none;
+    justify-self: center;
+    border: 1px rgb(67, 66, 66) solid;
+    /* border: 1px solid black; */
+}
+
+/* // Alarms list */
+.alarms-box {
+    width: 90%;
+    height: 4%;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 42px;
+    margin: 0 10px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.switch input{display: none;}
+
+.slider::before{
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    left: 5px;
+    bottom: 5px;
+    top: 3px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider{
+    background-color: greenyellow;
+}
+
+input:checked + .slider::before{transform: translateX(45px);}
