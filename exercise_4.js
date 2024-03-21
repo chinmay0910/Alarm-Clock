@@ -19,7 +19,7 @@ get_time = () => {
 }
 get_time()
 console.log(h,m,s);
-// setInterval(get_time,1000);
+setInterval(get_time,1000);
 
 let iHTML = "";
 setAlarm = () => {
